@@ -17,6 +17,9 @@
    <layout class="QVBoxLayout" name="verticalLayout">
     <item>
      <widget class="QSplitter" name="splitter">
+      <property name="focusPolicy">
+       <enum>Qt::TabFocus</enum>
+      </property>
       <property name="orientation">
        <enum>Qt::Horizontal</enum>
       </property>
@@ -84,15 +87,15 @@
       </widget>
       <widget class="QToolBox" name="toolBox">
        <property name="currentIndex">
-        <number>0</number>
+        <number>1</number>
        </property>
        <widget class="QWidget" name="page_2">
         <property name="geometry">
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>478</width>
-          <height>341</height>
+          <width>455</width>
+          <height>337</height>
          </rect>
         </property>
         <attribute name="label">
@@ -218,6 +221,9 @@
               <iconset theme="list-add">
                <normaloff>.</normaloff>.</iconset>
              </property>
+             <property name="shortcut">
+              <string/>
+             </property>
             </widget>
            </item>
           </layout>
@@ -229,8 +235,8 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>478</width>
-          <height>341</height>
+          <width>455</width>
+          <height>337</height>
          </rect>
         </property>
         <attribute name="label">
@@ -343,6 +349,9 @@
               <iconset theme="list-add">
                <normaloff>.</normaloff>.</iconset>
              </property>
+             <property name="shortcut">
+              <string>Ctrl+Shift+C</string>
+             </property>
             </widget>
            </item>
           </layout>
@@ -355,6 +364,9 @@
    </layout>
   </widget>
   <widget class="QToolBar" name="toolBar">
+   <property name="focusPolicy">
+    <enum>Qt::StrongFocus</enum>
+   </property>
    <property name="windowTitle">
     <string>toolBar</string>
    </property>
@@ -370,9 +382,12 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="separator"/>
    <addaction name="actionRemove_Selected"/>
    <addaction name="separator"/>
    <addaction name="actionGenerate_Example"/>
+   <addaction name="separator"/>
+   <addaction name="actionremove_selection"/>
   </widget>
   <action name="actionChange_User">
    <property name="icon">
@@ -394,6 +409,9 @@
    <property name="toolTip">
     <string>Remove Selected</string>
    </property>
+   <property name="shortcut">
+    <string>Del</string>
+   </property>
   </action>
   <action name="actionGenerate_Example">
    <property name="text">
@@ -403,6 +421,26 @@
   <action name="actionWIP">
    <property name="text">
     <string>WIP</string>
+   </property>
+  </action>
+  <action name="actionremove_selection">
+   <property name="text">
+    <string>remove selection</string>
+   </property>
+   <property name="toolTip">
+    <string>Press it to stop editing current selection(Esc)</string>
+   </property>
+   <property name="shortcut">
+    <string>Esc</string>
+   </property>
+  </action>
+  <action name="actionFile">
+   <property name="icon">
+    <iconset resource="Icons.qrc">
+     <normaloff>:/Icons/Icons/file.png</normaloff>:/Icons/Icons/file.png</iconset>
+   </property>
+   <property name="text">
+    <string>File</string>
    </property>
   </action>
  </widget>
